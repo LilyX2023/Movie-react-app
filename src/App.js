@@ -1,25 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Movies from './components/Movie'
+import movies from './moviesarray';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    movies.map(v => 
+    <Movies 
+      name={v.name} 
+      year={v.year} 
+      rating={v.rating} 
+      img={v.image}/>)
   );
 }
+
+
 
 export default App;
